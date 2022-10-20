@@ -25,7 +25,7 @@ st.set_page_config(
     initial_sidebar_state = 'auto'
 )
 
-st.sidebar.image('logo.png')
+st.sidebar.image('image/logo.png')
 st.sidebar.title('MTTR Predictor')
 st.sidebar.write('---')
 
@@ -37,7 +37,7 @@ This app predicts **The Time taken by a Service Agent to Solve a Specific Ticket
 st.write('---')
 
 # load data
-data_path = 'mttr_predictor.csv'
+data_path = 'data/mttr_predictor.csv'
 data_df = pd.read_csv(data_path, parse_dates=['Request Submitted Date and Time','Request Resolved Date and Time'])
 st.write(data_df.head(20))
 
@@ -99,7 +99,7 @@ y = data_df['mttr']
 
 # to retrain
 agree = st.checkbox('Check to retrain the model')
-filename = 'finalized_model.sav'
+filename = 'model/finalized_model.sav'
 if agree:
     # Build Regression Model
     model = GradientBoostingRegressor(
