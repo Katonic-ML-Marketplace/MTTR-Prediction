@@ -1,7 +1,5 @@
 from datetime import datetime, time
 import pickle
-import requests
-from io import BytesIO
 from PIL import Image
 
 import pandas as pd
@@ -15,8 +13,7 @@ from sklearn.preprocessing import OrdinalEncoder
 from sklearn.ensemble import GradientBoostingRegressor
 
 
-response = requests.get(url='https://katonic.ai/favicon.ico')
-im = Image.open(BytesIO(response.content))
+im = Image.open('image/favicon.ico')
 
 st.set_page_config(
     page_title='MTTR Predictor App', 
@@ -134,7 +131,7 @@ if st.sidebar.button('Prediction'):
     prediction = model.predict(df)
 
     st.header('Mean Time to Resolution Predictions')
-    st.write(f'Mean Time To Resolution: **{prediction}**')
+    st.write(f'Mean Time To Resolution: **{prediction[0]}**')
 else:
     st.warning('Please Click on Prediction')
 st.write('---')
