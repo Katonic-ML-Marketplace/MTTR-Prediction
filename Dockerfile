@@ -5,8 +5,7 @@ RUN mkdir -p data model image
 COPY app.py .
 COPY data/mttr_predictor.csv data/.
 COPY model/finalized_model.sav model/.
-COPY image/logo.png image/.
-COPY image/favicon.ico image/.
+COPY image .
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
