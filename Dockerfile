@@ -3,8 +3,8 @@ FROM python:3.8.2-slim
 # RUN mkdir -p data model image
 
 COPY app.py .
-COPY data/mttr_predictor.csv data/.
-COPY model/finalized_model.sav model/.
+COPY data data
+COPY model model
 COPY image image
 COPY requirements.txt .
 
