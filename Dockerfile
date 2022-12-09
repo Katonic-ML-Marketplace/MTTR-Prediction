@@ -5,7 +5,7 @@ FROM python:3.8.2-slim
 COPY app.py .
 COPY data/mttr_predictor.csv data/.
 COPY model/finalized_model.sav model/.
-COPY image .
+COPY image image
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
