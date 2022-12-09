@@ -1,6 +1,6 @@
 FROM python:3.8.2-slim
 
-RUN mkdir -p data model image
+# RUN mkdir -p data model image
 
 COPY app.py .
 COPY data/mttr_predictor.csv data/.
